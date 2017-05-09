@@ -22,22 +22,22 @@ import java.util.List;
 * 作    者：ksheng
 * 时    间：2017/5/7$ 23:19$.
 */
-public class GameView extends GridLayout {
+public class ImageGameView extends GridLayout {
     float startX, startY, offsetX, offsetY;
-    private CardView[][] cardsMap = new CardView[4][4];
+    private CardImageView[][] cardsMap = new CardImageView[4][4];
     private List<Point> emptyPoints = new ArrayList<>();
 
-    public GameView(Context context) {
+    public ImageGameView(Context context) {
         super(context);
         initGameView();
     }
 
-    public GameView(Context context, AttributeSet attrs) {
+    public ImageGameView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initGameView();
     }
 
-    public GameView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public ImageGameView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         initGameView();
@@ -111,6 +111,8 @@ public class GameView extends GridLayout {
 
         addRadomNum();
         addRadomNum();
+
+
     }
 
     private void addRadomNum() {
@@ -130,11 +132,11 @@ public class GameView extends GridLayout {
     }
 
     private void addCard(int cardWidth, int cardHeight) {
-        CardView c;
+        CardImageView c;
 
         for (int y = 0; y < 4; y++) {
             for (int x = 0; x < 4; x++) {
-                c = new CardView(getContext());
+                c = new CardImageView(getContext());
                 c.setNum(0);
                 addView(c, cardWidth, cardHeight);
 
