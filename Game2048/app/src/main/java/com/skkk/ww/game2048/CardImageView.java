@@ -52,6 +52,21 @@ public class CardImageView extends FrameLayout {
             case 64:
                 ivCard.setImageResource(R.drawable.c64);
                 break;
+            case 128:
+                ivCard.setImageResource(R.drawable.c128);
+                break;
+            case 256:
+                ivCard.setImageResource(R.drawable.c256);
+                break;
+            case 512:
+                ivCard.setImageResource(R.drawable.c512);
+                break;
+            case 1024:
+                ivCard.setImageResource(R.drawable.c1024);
+                break;
+            case 2048:
+                ivCard.setImageResource(R.drawable.c2048);
+                break;
             default:
                 ivCard.setImageBitmap(null);
                 break;

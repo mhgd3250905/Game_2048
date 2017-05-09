@@ -27,10 +27,10 @@
             />
     </LinearLayout>
 
-    <com.skkk.ww.game2048.GameView
+    <com.skkk.ww.game2048.ImageGameView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:id="@id/gl_game_container"></com.skkk.ww.game2048.GameView>
+        android:id="@id/gl_game_container"></com.skkk.ww.game2048.ImageGameView>
 
 </LinearLayout>

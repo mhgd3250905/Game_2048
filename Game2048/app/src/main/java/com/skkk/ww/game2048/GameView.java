@@ -90,7 +90,6 @@ public class GameView extends GridLayout {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-
         //动态计算布局宽高
         int cardWidth = (Math.min(w, h) - 10) / 4;
         if (getChildCount()==0) {
