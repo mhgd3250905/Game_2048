@@ -2,6 +2,7 @@ package com.skkk.ww.game2048;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.support.v7.app.AlertDialog;
 import android.util.AttributeSet;
@@ -39,7 +40,6 @@ public class GameView extends GridLayout {
 
     public GameView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-
         initGameView();
     }
 
@@ -48,7 +48,7 @@ public class GameView extends GridLayout {
      */
     private void initGameView() {
         setColumnCount(4);
-        setBackgroundColor(0xffbbada0);
+        setBackgroundColor(Color.GRAY);
 
         setOnTouchListener(new OnTouchListener() {
             @Override
@@ -98,9 +98,12 @@ public class GameView extends GridLayout {
         startGame();
     }
 
-    private void startGame() {
 
-        MainActivity.getMainActivity().clearScore();
+    /**
+     *  开始游戏
+     */
+    private void startGame() {
+        MainActivity.getMainActivity().clearScore();    //清理分数
 
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {

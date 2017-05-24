@@ -6,42 +6,43 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-//    @BindView(R.id.tv_score)
+
+    //    @BindView(R.id.tv_score)
     TextView mTvScore;
 //    @BindView(R.id.gl_game_container)
 //    GameView mGlGameContainer;
 
-    int score=0;    //分数
+    int score = 0;    //分数
 
-    private static MainActivity mainActivity=null;
+    private static MainActivity mainActivity = null;
 
     public static MainActivity getMainActivity() {
         return mainActivity;
     }
 
     public MainActivity() {
-        mainActivity=this;
+        mainActivity = this;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mTvScore= (TextView) findViewById(R.id.tv_score);
+        mTvScore = (TextView) findViewById(R.id.tv_score);
 
     }
 
-    public void clearScore(){
-        score=0;
+    public void clearScore() {
+        score = 0;
         showScore();
     }
 
-    public void showScore(){
+    public void showScore() {
         mTvScore.setText(String.valueOf(score));
     }
 
-    public void addScore(int s){
-        score+=s;
+    public void addScore(int s) {
+        score += s;
         showScore();
     }
 }

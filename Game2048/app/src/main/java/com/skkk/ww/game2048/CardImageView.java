@@ -1,6 +1,7 @@
 package com.skkk.ww.game2048;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
@@ -15,23 +16,45 @@ import android.widget.ImageView;
 */
 public class CardImageView extends FrameLayout {
     private int num;
-    private ImageView ivCard;
+    private ImageView ivCard,ivBG;
+    private final LayoutParams lp;
 
     public CardImageView(Context context) {
         super(context);
 
+
+        lp = new LayoutParams(-1,-1);
+        lp.setMargins(10,10,0,0);
+
+
+
         ivCard=new ImageView(getContext());
         ivCard.setScaleType(ImageView.ScaleType.FIT_XY);
-        ivCard.setBackgroundColor(0x33ffffff);
+        ivCard.setBackgroundColor(Color.LTGRAY);
 
-        LayoutParams lp=new LayoutParams(-1,-1);
-        lp.setMargins(10,10,0,0);
         addView(ivCard, lp);
 
-        setNum(0);
+        setNum(ivCard,0);
     }
 
-    public void setNum(int num) {
+    public void showBg(){
+        ivBG=new ImageView(getContext());
+        ivBG.setScaleType(ImageView.ScaleType.FIT_XY);
+        ivBG.setBackgroundColor(Color.LTGRAY);
+        setNum(ivBG,getNum());
+        addView(ivBG,lp);
+    }
+
+    public void hideBg(){
+        ivBG.setVisibility(INVISIBLE);
+        removeView(ivBG);
+    }
+
+    public void setCardNum(int num){
+        setNum(ivCard,num);
+    }
+
+    public void setNum(ImageView ivCard, int num) {
         this.num = num;
         switch (num){
             case 2:
@@ -72,6 +95,8 @@ public class CardImageView extends FrameLayout {
                 break;
         }
     }
+
+
 
     public int getNum() {
         return num;
